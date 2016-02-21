@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^search/', CouncilmaticFacetedSearchView(searchqueryset=sqs, 
                                        form_class=CouncilmaticSearchForm)),
+    url(r'^$', RedirectView.as_view(url='/about/', permanent=False), name='temp-index'),
     url(r'^$', ChicagoIndexView.as_view(), name='index'),
     url(r'^about/$', ChicagoAboutView.as_view(), name='about'),
     url(r'^legislation/(?P<slug>.*)/$', ChicagoBillDetailView.as_view(), name='bill_detail'),

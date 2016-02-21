@@ -29,6 +29,10 @@
     "COUNCILMATIC_CITY_NAME_SHORT": {
       "required": false
     },
+    "COUNCILMATIC_SITE_URL": {
+      "required": false,
+      "description": "Website URL, if hosting on your own domain."
+    }
     "COUNCILMATIC_LEGISLATIVE_SESSIONS": {
       "required": true,
       "value": "2015,2016"

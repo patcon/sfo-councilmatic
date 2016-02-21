@@ -31,11 +31,14 @@ APP_NAME = 'chicago'
 #########################
 
 # this is for populating meta tags
+if os.environ['HEROKU_APP_NAME'] :
+    os.environ['COUNCILMATIC_SITE_URL'] = 'https://{}.herokuapp.com'.format(os.environ['HEROKU_APP_NAME'])
+
 SITE_META = {
     'site_name' : 'San Francisco Councilmatic',
     'site_desc' : 'Board of Supervisors, demystified. Keep tabs on San Francisco legislation, supervisors, & meetings.',
     'site_author' : 'DataMade',
-    'site_url' : 'https://sfo.councilmatic.org',
+    'site_url' : os.environ.get('COUNCILMATIC_SITE_URL', 'https://chicago.councilmatic.org'),
     'twitter_site': '@DataMadeCo',
     'twitter_creator': '@DataMadeCo',
 }

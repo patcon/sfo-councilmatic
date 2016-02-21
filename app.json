@@ -37,5 +37,8 @@
   "addons": [
     "heroku-postgresql",
     "searchbox"
+  ],
+  "features": [
+    "runtime-dyno-metadata"
   ]
 }

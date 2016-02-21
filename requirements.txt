@@ -1,2 +1,4 @@
 psycopg2==2.6.1
+gunicorn==19.4.5
+whitenoise==2.0.6
 -e git://github.com/patcon/django-councilmatic.git@tmp/develop#egg=django-councilmatic

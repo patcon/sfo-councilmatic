@@ -1,6 +1,9 @@
-# Chicago Councilmatic
+# San Francisco Councilmatic
 
-Keep track of what Chicago City Council is doing.
+Keep track of what San Francisco Board of Supervisors is doing.
+
+**Disclaimer:** Incomplete. Lots of Chicago-specific terminology
+left-overs.
 
 ## Setup
 

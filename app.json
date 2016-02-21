@@ -1,0 +1,41 @@
+{
+  "name": "San Francisco Councilmatic",
+  "description": "A Councilmatic instance, aspiring to be Heroku-deployable.",
+  "logo": "https://imgur.com/QWKCS3j.png",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "psql $DATABASE_URL -c 'CREATE EXTENSION postgis'"
+  },
+  "repository": "https://github.com/patcon/sfo-councilmatic",
+  "website": "http://ocd.datamade.us/",
+  "keywords": ["python", "django", "councilmatic" ],
+  "env": {
+    "COUNCILMATIC_OCD_COUNCIL_ID": {
+      "required": true,
+      "value": "ocd-organization/6bff9d1d-d1e2-49a9-b0b5-9dfc3d6eaafc"
+    },
+    "COUNCILMATIC_OCD_JURISDICTION_ID": {
+      "required": true,
+      "value": "ocd-jurisdiction/country:us/state:ca/county:san_francisco/government"
+    },
+    "COUNCILMATIC_COUNCIL_NAME": {
+      "required": false,
+      "value": "Board of Supervisors"
+    },
+    "COUNCILMATIC_CITY_NAME": {
+      "required": true,
+      "value": "San Francisco"
+    },
+    "COUNCILMATIC_CITY_NAME_SHORT": {
+      "required": false
+    },
+    "COUNCILMATIC_LEGISLATIVE_SESSIONS": {
+      "required": true,
+      "value": "2015,2016"
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "searchbox"
+  ]
+}

@@ -4,12 +4,15 @@
 # These settings are required #
 ###############################
 
-OCD_CITY_COUNCIL_ID = 'ocd-organization/6bff9d1d-d1e2-49a9-b0b5-9dfc3d6eaafc'
-CITY_COUNCIL_NAME = 'Board of Supervisors'
-OCD_JURISDICTION_ID = 'ocd-jurisdiction/country:us/state:ca/county:san_francisco/government'
-LEGISLATIVE_SESSIONS = ['2015', '2016'] # the last one in this list should be the current legislative session
-CITY_NAME = 'San Francisco'
-CITY_NAME_SHORT = 'San Francisco'
+import os
+
+OCD_CITY_COUNCIL_ID = os.environ.get('COUNCILMATIC_OCD_COUNCIL_ID', 'ocd-organization/ef168607-9135-4177-ad8e-c1f7a4806c3a')
+CITY_COUNCIL_NAME = os.environ.get('COUNCILMATIC_COUNCIL_NAME', 'Chicago City Council')
+OCD_JURISDICTION_ID = os.environ.get('COUNCILMATIC_OCD_JURISDICTION_ID', 'ocd-jurisdiction/country:us/state:il/place:chicago/government')
+# the last one in this list should be the current legislative session
+LEGISLATIVE_SESSIONS = os.environ.get('COUNCILMATIC_LEGISLATIVE_SESSIONS', '2007,2011,2015').split(',')
+CITY_NAME = os.environ.get('COUNCILMATIC_CITY_NAME', 'Chicago')
+CITY_NAME_SHORT = os.environ.get('COUNCILMATIC_CITY_NAME_SHORT', CITY_NAME)
 
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
 CITY_VOCAB = {
